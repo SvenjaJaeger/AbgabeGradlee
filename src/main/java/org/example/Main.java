@@ -4,6 +4,10 @@ import javafx.application.Application;
 
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.config.Configurator;
 
 /**
  * @author svenja, m27972 u35481
@@ -12,9 +16,20 @@ import javafx.stage.Stage;
  */
 
 public class Main extends Application {
+    //LOGGING
+    private final static Logger logger = LogManager.getLogger();
+
     //Startet das Programm
     public static void main(String[] args) {
+        Configurator.setLevel(logger.getName(), Level.DEBUG);
+        logger.info("Information über Nutzer");
+        logger.error("einfacer Fehler");
+        logger.fatal("scwerer Fehler");
         launch(args);
+    }
+
+    public static boolean isBlank(String s){
+        return s == null || s.trim().isEmpty();
     }
 
     @Override

@@ -1,0 +1,14 @@
+2021-08-20 11:09:28 INFO  Main:25 - Information über Nutzer
+2021-08-20 11:09:28 ERROR Main:26 - einfacer Fehler
+2021-08-20 11:09:28 FATAL Main:27 - scwerer Fehler
+2021-08-23 11:49:14 INFO  MainTest:23 - FAILED: TimeOut1 ()
+2021-08-23 11:49:14 INFO  MainTest:23 - FAILED: alleZusammen ()
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: aussnahme ()
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: evalStrings [1] Para 1
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: evalStrings [2] Para 2
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: evalStrings [3] Para 3
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: isBlank [1] 
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: isBlank [2]   
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: isBlank [3] 	
+2021-08-23 11:49:14 INFO  MainTest:23 - PASSED: isBlank [4] 
+

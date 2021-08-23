@@ -1,3 +1,5 @@
+import java.awt.Desktop
+
 plugins {
     id 'java'
     id 'application'
@@ -14,9 +16,22 @@ repositories {
 }
 
 dependencies {
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.11.1'
+
+
     implementation 'org.openjfx:javafx:16'
+
+    
+    implementation 'org.apache.logging.log4j:log4j-api:2.14.1'
+    implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.8'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
+
 
 }
 
@@ -35,10 +50,21 @@ jar {
 }
 
 javafx{
-    version = "11"
+    version = "15"
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 test{
     useJUnitPlatform()
+    testLogging{
+        events 'passed', 'skipped', 'failed'
+    }
+}
+//ÖffnetBrowser
+tasks.withType(Test){
+    doLast {
+        File file = file("$buildDir/reports/tests/test/index.html")
+        Desktop desktop = Desktop.getDesktop()
+        desktop.browse(file.toURI())
+    }
 }
